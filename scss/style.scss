@@ -1,6 +1,7 @@
 *{
   font-family:"Roboto";
   color:white;
+  box-sizing: border-box;
 }
 .night{
   background: rgb(128,65,228);
@@ -13,20 +14,41 @@
 p{
   margin-bottom:0;
 }
-.search{
+.search,.pin{
   &:focus{
     outline:none;
   }
   z-index:10000;
   border:none;
-  position:absolute;
-  top:0;
-  right:0;
   background-color: rgba(255, 255, 255, 0);
   i{
     color:white;
     font-size:1.3rem;
   }
+}
+input{
+  color:white;
+  float: left;
+  border-radius:15px;
+  padding:0.5rem;
+  background-color:rgba(255, 255, 255, 0);
+  border:1px solid white;
+  border-right:none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  &:focus{
+    outline:none;
+  }
+}
+.search{
+  border:1px solid white;
+  float: left;
+  border-left:none;
+  border-radius:15px;
+  padding:0.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
 }
 .container{
   height:100vh;
@@ -88,6 +110,14 @@ p{
 .bg-thunder{
   background-image:url("../images/icons.png");
   background-position: 0 -500px;
+}
+.bg-sun{
+  background-image:url("../images/icons.png");
+  background-position: -250px -250px;
+}
+.bg-moon{
+  background-image:url("../images/icons.png");
+  background-position: 0 -250px;
 }
 // Day icons
 #day-icon_1,#day-icon_2,#day-icon_3,#day-icon_4{

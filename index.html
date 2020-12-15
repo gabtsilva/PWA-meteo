@@ -8,10 +8,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b052d01902.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#eb5252"/>
+  <link rel="icon" sizes="512x512" href="images/icon.png">
+  <link rel="manifest" href="manifest.json">
+  <!-- reuse same icon for Safari -->
+  <link rel="apple-touch-icon" href="images/icon.png">
+  <!-- multiple icons for IE -->
+  <meta name="msapplication-square310x310logo" content="images/icon.png">
+  <link rel="apple-touch-icon" href="images/icon.png">
+  <meta name="msapplication-square70x70logo" content="images/icon.png">
+  <meta name="msapplication-square150x150logo" content="images/icon.png">
+  <meta name="msapplication-wide310x150logo" content="images/icon.png">
   <title>PWA Météo</title>
 </head>
 <body>
-  <button class="search mt-4 mr-4"><i class="fas fa-search"></i></button>
+  <noscript>
+    <h1>Veuillez activer les scripts pour accéder à cette app.</h1>
+  </noscript>
+  <div class="buttons d-flex justify-content-between mt-4 mx-4">
+    <button class="pin"><i class="fas fa-map-marker-alt"></i></button>
+    <form>
+      <input type="text" name="city-search">
+      <button type="submit" class="search"><i class="fas fa-search"></i></button>
+    </form>
+
+  </div>
+
   <div class="container">
     <div class="current py-4 col-12">
       <p class="loc"></p>
@@ -39,8 +61,50 @@
     <div class="row others py-5 align-items-center justify-content-center">
     </div>
   </div>
-  
   <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="sw.js"></script>
   <script src="js/index.js"></script>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then(function() { console.log("Service Worker Registered"); });
+    }
+    // fonction qui check si appli installable
+    window.addEventListener('beforeinstallprompt', (e) => {
+        console.log("beforeinstallprompt");
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI notify the user they can add to home screen
+    showInstallPromotion();
+
+});
+
+function  showInstallPromotion() {
+  //  alert("ok on peut installer");
+
+   $('#btnAdd').removeClass('d-none');
+
+}
+
+var btnAdd = document.getElementById("btnAdd");
+
+btnAdd.addEventListener('click', (e) => {
+  // hide our user interface that shows our A2HS button
+  btnAdd.style.display = 'none';
+  // Show the prompt
+  deferredPrompt.prompt();
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});  
+  </script>
 </body>
 </html>
