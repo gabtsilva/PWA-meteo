@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="scss/bootstrap.min.css">
+  <link rel="stylesheet" href="scss/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b052d01902.js" crossorigin="anonymous"></script>
+  <title>PWA Météo</title>
+</head>
+<body>
+  <button class="search mt-4 mr-4"><i class="fas fa-search"></i></button>
+  <div class="container">
+    <div class="current py-4 col-12">
+      <p class="loc"></p>
+      <p class="datestamp"></p> 
+      <div class="bg"></div>
+      <p class="temp"></p>
+      <p class="tempname mb-3"></p>
+      <div class="row justify-content-center min-max-wind">
+        <div class="col-12 d-flex">
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fas mr-2 fa-temperature-low"></i>
+            <p class="min"></p>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fas mr-2 fa-temperature-high"></i>
+            <p class="max"></p>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fas mr-2 fa-wind"></i>
+            <p class="wind"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row others py-5 align-items-center justify-content-center">
+    </div>
+  </div>
+  
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

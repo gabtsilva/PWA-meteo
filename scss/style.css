@@ -1,0 +1,157 @@
+* {
+  font-family: "Roboto";
+  color: white;
+}
+
+.night {
+  background: #8041e4;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #8041e4), to(#7300ff));
+  background: linear-gradient(180deg, #8041e4 20%, #7300ff 100%);
+}
+
+.morning {
+  background: #41b2e4;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #41b2e4), to(#007dff));
+  background: linear-gradient(180deg, #41b2e4 20%, #007dff 100%);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.search {
+  z-index: 10000;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search i {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.container {
+  height: 100vh;
+  max-width: 1300px;
+  text-align: center;
+}
+
+.container .loc {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.container .datestamp {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.container .temp {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.container .tempname {
+  font-size: 2rem;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.min, .max, .wind {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.day-temp {
+  font-size: 1rem;
+}
+
+.bg {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  background-size: 1000px 750px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+
+.bg-sunny {
+  background-image: url("../images/icons.png");
+  background-position: 250px 250px;
+}
+
+.bg-cloudy {
+  background-image: url("../images/icons.png");
+  background-position: 0 0;
+}
+
+.bg-sun-cloud {
+  background-image: url("../images/icons.png");
+  background-position: -50px 0;
+}
+
+.bg-rain {
+  background-image: url("../images/icons.png");
+  background-position: -500px -500px;
+}
+
+.bg-snow {
+  background-image: url("../images/icons.png");
+  background-position: -750px 0;
+}
+
+.bg-thunder {
+  background-image: url("../images/icons.png");
+  background-position: 0 -500px;
+}
+
+#day-icon_1, #day-icon_2, #day-icon_3, #day-icon_4 {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  background-size: 200px 150px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+
+.icon-sunny {
+  background-image: url("../images/icons.png");
+  background-position: 100px 50px;
+}
+
+.icon-cloudy {
+  background-image: url("../images/icons.png");
+  background-position: 0 0;
+}
+
+.icon-sun-cloud {
+  background-image: url("../images/icons.png");
+  background-position: 2px 0;
+}
+
+.icon-rain {
+  background-image: url("../images/icons.png");
+  background-position: -100px -100px;
+}
+
+.icon-snow {
+  background-image: url("../images/icons.png");
+  background-position: -150px -150px;
+}
+
+.icon-thunder {
+  background-image: url("../images/icons.png");
+  background-position: 0 -150px;
+}
+
+.col-3 {
+  padding: 0 5px;
+}
+/*# sourceMappingURL=style.css.map */
