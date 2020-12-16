@@ -80,7 +80,7 @@ input{
   font-size:1rem;
 }
 // Meteo icons
-.bg{
+#bg{
   margin:auto;
   width: 250px; height: 250px;
   background-size: 1000px 750px;
@@ -129,7 +129,7 @@ input{
 }
 .icon-sunny{
   background-image:url("../images/icons.png");
-  background-position: 100px 50px;
+  background-position: 100px -50px;
 }
 .icon-cloudy{
   background-image:url("../images/icons.png");
@@ -137,7 +137,7 @@ input{
 }
 .icon-sun-cloud{
   background-image:url("../images/icons.png");
-  background-position: 2px 0;
+  background-position: 0 0;
 }
 .icon-rain{
   background-image:url("../images/icons.png");
