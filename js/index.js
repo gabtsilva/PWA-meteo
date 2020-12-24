@@ -45,8 +45,7 @@ function dailyWeather(e){
 $(document).ready(function(){
   var dateObject = new Date();
   const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+  "July", "August", "September", "October", "November", "December"];
   navigator.geolocation.getCurrentPosition(function(position){
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
@@ -55,11 +54,12 @@ $(document).ready(function(){
       method:"GET",
       dataType:"json",
       success:function(data){
-        // console.log(data);
         if(data.address.town){
           var city = data.address.town
-        }else{
-          var city = data.address.state
+        }else if(data.address.city){
+          var city = data.address.city
+        }else if(data.address.county){
+          var city = data.address.county
         }
         var country = data.address.country
         $.ajax({
@@ -117,11 +117,12 @@ $(document).ready(function(){
         method:"GET",
         dataType:"json",
         success:function(data){
-          // console.log(data);
           if(data.address.town){
             var city = data.address.town
-          }else{
-            var city = data.address.state
+          }else if(data.address.city){
+            var city = data.address.city
+          }else if(data.address.county){
+            var city = data.address.county
           }
           var country = data.address.country
           $.ajax({

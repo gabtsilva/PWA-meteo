@@ -18,7 +18,6 @@ self.addEventListener('install', function(e) {
   
   //https://codelabs.developers.google.com/codelabs/offline/#7
   self.addEventListener('fetch', function(event) {
-    console.log(event.request.url);
     event.respondWith(
       caches.match(event.request).then(function(response) {
         return response || fetch(event.request);
