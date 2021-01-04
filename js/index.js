@@ -1,5 +1,5 @@
 function currentWeatherCheck(e){
-  if(e == "Ciel voilé" || e == "Nuit légèrement voilée" || e == "Faibles passages nuageux" || e == "Faiblement nuageux" || e == "Fortement nuageux" || e == "Développement nuageux" || e == "Nuit avec développement nuageux"){
+  if(e == "Ciel voilé" || e == "Nuit légèrement voilée" || e == "Faibles passages nuageux" || e == "Faiblement nuageux" || e == "Fortement nuageux" || e == "Développement nuageux" || e == "Nuit avec développement nuageux" || e == "Nuit nuageuse"){
     $("#bg").removeClass();
     $("#bg").addClass("bg-cloudy");
   }else if(e == "Ensoleillé" || e == "Eclaircies"){
@@ -21,7 +21,7 @@ function currentWeatherCheck(e){
 }
 
 function dailyWeather(e){
-  if(e == "Ciel voilé" || e == "Nuit légèrement voilée" || e == "Faibles passages nuageux" || e == "Faiblement nuageux" || e == "Fortement nuageux" || e == "Développement nuageux" || e == "Nuit avec développement nuageux"){
+  if(e == "Ciel voilé" || e == "Nuit légèrement voilée" || e == "Faibles passages nuageux" || e == "Faiblement nuageux" || e == "Fortement nuageux" || e == "Développement nuageux" || e == "Nuit avec développement nuageux" || e == "Nuit nuageuse"){
     $("#day-icon_"+[i]).removeClass();
     $("#day-icon_"+[i]).addClass("icon-cloudy");
   }else if(e == "Ensoleillé" || e == "Eclaircies"){
